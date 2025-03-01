@@ -25,7 +25,7 @@ write_upstream() {
         [ "$type" = "proxy" ] && [ -n "$via" ] && \
 		type="http"
 	[ "$type" = "http" ] || [ "$type" = "socks4" ] || [ "$type" = "socks5" ] && [ -n "$via" ] && \
-		echo "upstream http $via$target"
+		echo "upstream $type $via$target"
 
 	[ "$type" = "reject" ] && [ -n "$target" ] && \
 		echo "upstream none$target"
